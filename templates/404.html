@@ -4,25 +4,25 @@
 
 {% block css %}
 <style type="text/css">
-  body{
+  body {
     padding-top: 40px;
   }
-  h1, p{
-    text-align:center;
+  h1, p {
+    text-align: center;
   }
-  h1{
-    font-size:64px;
-    margin:75px 0 50px;
+  h1 {
+    font-size: 64px;
+    margin: 75px 0 50px;
   }
-  p{
-    font-size:24px;
-    margin:15px 0;
+  p {
+    font-size: 24px;
+    margin: 15px 0;
   }
 </style>
 {% endblock %}
 
 {% block main %}
 <h1>404</h1>
-<p>That page doesn't even exist.</p>
-<p>Why don't you just <a href="{{ url_for('home') }}">go back home</a>?</p>
+<p>Sorry, that page doesn't exist.</p>
+<p>Want to <a href="{{ url_for('home') }}">go home</a> instead?</p>
 {% endblock %}
