@@ -2,16 +2,12 @@
 
 Boilerplate for a web application using the Python Flask framework.
 
+Adapted from:
+https://github.com/zachwill/flask_heroku
+
  * easily deploy to Heroku,
  * package assets (JS, CSS, CoffeeScript, SCSS, etc) using [Flask-Assets](http://flask-assets.readthedocs.org/en/latest/index.html),
- * includes Backbone/Underscore and Twitter Bootstrap by default, but these are
- easily swapped for libraries of your choice.
-
-Thanks to:
-
-* https://github.com/zachwill/flask_heroku
-* https://github.com/tbranyen/backbone-boilerplate
-* https://github.com/miracle2k/webassets
+ * includes Backbone/Underscore and Twitter Bootstrap by default.
 
 
 ### Install
@@ -41,8 +37,17 @@ http://devcenter.heroku.com/articles/python
 
 ```
 $ heroku login
-$ heroku create --stack cedar
+$ heroku create
 $ git push heroku master
+$ heroku ps:scale web=1
 ```
 
 Note: Heroku currently requires Python 2.7.
+
+
+### Read more
+
+[Getting starting with Python on Heroku](https://devcenter.heroku.com/articles/python)
+[Flask Documentation](http://flask.pocoo.org/docs/)
+[Jinja2 Documentation](http://jinja.pocoo.org/2/documentation/)
+[Werkzeug Documentation](http://werkzeug.pocoo.org/documentation/)
