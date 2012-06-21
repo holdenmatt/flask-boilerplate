@@ -1,6 +1,8 @@
 #!/usr/bin/env python
+"""
+Unit tests for the boilerplate app.
+"""
 
-"""Tests for the Flask Heroku template."""
 
 import unittest
 from app import app
