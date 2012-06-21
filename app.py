@@ -8,20 +8,18 @@ import os
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
-
-if 'SECRET_KEY' in os.environ:
-    app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
+app.config.from_pyfile('settings.py')
 
 
 @app.route('/')
 def home():
-    """Render website's home page."""
+    """Render home page."""
     return render_template('home.html')
 
 
 @app.route('/about/')
 def about():
-    """Render the website's about page."""
+    """Render the about page."""
     return render_template('about.html')
 
 
@@ -48,7 +46,9 @@ def page_not_found(error):
     return render_template('404.html'), 404
 
 
+# If PORT not specified by environment, assume development config.
 if __name__ == '__main__':
-    # Bind to PORT, or 5000 by default.
     port = int(os.environ.get('PORT', 5000))
+    if port == 5000:
+        app.debug = True
     app.run(host='0.0.0.0', port=port)
