@@ -1,14 +1,31 @@
 """
-app.py
-
 Create the application.
 """
 
 import os
 from flask import Flask, render_template, request, redirect, url_for
+from flask.ext.assets import Environment
+from webassets.loaders import PythonLoader
+
 
 app = Flask(__name__)
+assets = Environment(app)
+
+
 app.config.from_pyfile('settings.py')
+
+
+# Load and register assets bundles.
+bundles = PythonLoader('bundles').load_bundles()
+for name, bundle in bundles.iteritems():
+    assets.register(name, bundle)
+
+# Output un-merged source files in debug mode.
+if app.debug:
+    app.config['ASSETS_DEBUG'] = True
+
+
+### Routes ###
 
 
 @app.route('/')
@@ -46,9 +63,6 @@ def page_not_found(error):
     return render_template('404.html'), 404
 
 
-# If PORT not specified by environment, assume development config.
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    if port == 5000:
-        app.debug = True
     app.run(host='0.0.0.0', port=port)
