@@ -67,6 +67,7 @@ update:
 clean:
 	-rm -rf $(TEMP)
 	-rm -rf bootstrap
+	-rm -rf static/.webassets-cache
 
 # Run tests.
 test:
