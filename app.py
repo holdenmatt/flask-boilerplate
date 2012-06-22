@@ -20,10 +20,6 @@ bundles = PythonLoader('bundles').load_bundles()
 for name, bundle in bundles.iteritems():
     assets.register(name, bundle)
 
-# Output un-merged source files in debug mode.
-if app.debug:
-    app.config['ASSETS_DEBUG'] = True
-
 
 ### Routes ###
 

@@ -57,9 +57,11 @@
   {% assets "libs_js" %}
   <script src="{{ ASSET_URL }}"></script>
   {% endassets %}
+  {% assets "app_js" %}
+  <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
 
-
-  <!-- Additional JavaScript libraries and plugins... -->
+  <!-- Additional JavaScript -->
   {% block js %}{% endblock %}
 
 
