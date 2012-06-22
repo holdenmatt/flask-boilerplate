@@ -46,7 +46,7 @@ all:
 	done
 
 	# Copy js/css/img files from TEMP into static.
-	mv $(TEMP)/*.js static/js
+	mv $(TEMP)/*.js static/js/libs
 	mv $(TEMP)/*.css static/css
 	mv $(TEMP)/*.png static/img
 

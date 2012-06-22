@@ -16,8 +16,8 @@ https://github.com/zachwill/flask_heroku
 
 1. Install dependencies from `npm`:
 
- * `npm install uglify-js -g`
- * `npm install recess -g` (needed to build Bootstrap)
+ * `npm install -g uglify-js`
+ * `npm install -g recess` (needed to build Bootstrap)
 
 2. Clone this repo.
 
