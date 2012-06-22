@@ -1,7 +1,11 @@
 #
 # Makefile
 #
-# Update static libraries to latest stable versions.
+# make init:
+# 	Initialize virtualenv/dependencies.
+#
+# make update:
+# 	Update static libraries to latest stable versions.
 #
 
 # Include some favorite JS libraries.
@@ -26,7 +30,14 @@ TEMP = temp
 NORM = \033[0m
 BOLD = \033[1m
 
-all:
+# Install virtualenv and dependencies from requirements.txt.
+init:
+	-@rm -rf venv
+	virtualenv venv --distribute --no-site-packages
+	source venv/bin/activate && pip install -r requirements.txt
+
+# Update libraries to latest stable versions.
+update:
 	$(MAKE) clean && mkdir $(TEMP)
 
 	# Download each lib to a TEMP directory.
