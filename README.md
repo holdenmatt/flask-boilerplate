@@ -13,8 +13,15 @@ https://github.com/zachwill/flask_heroku
 ### Install
 
 0. Install [Python and Virtualenv](http://install.python-guide.org/).
-1. Clone this repo.
-2. Run:
+
+1. Install dependencies from `npm`:
+
+ * `npm install uglify-js -g`
+ * `npm install recess -g` (needed to build Bootstrap)
+
+2. Clone this repo.
+
+3. Run:
 
 ```
     $ virtualenv venv --distribute --no-site-packages
